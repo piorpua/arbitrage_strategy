@@ -97,7 +97,7 @@ async def show_funding_rate_history():
             await asyncio.sleep(0.3)
 
         result = sorted(
-            result, key=lambda item: item['latestFundingRate'], reverse=True
+            result, key=lambda item: item['avgFundingRate_7D'], reverse=True
         )
         for funding_rate_info in result:
             logging.info(f'{json.dumps(funding_rate_info)}')
